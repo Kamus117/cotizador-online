@@ -37,8 +37,9 @@ const modelos = [
         img: "https://th.bing.com/th/id/OIP.2CULMo6NpHPtxm6RqCByegAAAA?rs=1&pid=ImgDetMain",
         indiceCarga: 152,
         tipo: "lineal",
-        precio: 642000,
+        precio: 629000,
         disponible: true,
+        oferta: true,
         medidas: "295/80R22,5",
     }),
     new ModeloCubierta({
@@ -70,7 +71,7 @@ const modelos = [
         img: "https://example.com/ac901.jpg",
         indiceCarga: 154,
         tipo: "lineal",
-        precio: 434000,
+        precio: 450000,
         medidas: "295/80R22,5",
     }),
     new ModeloCubierta({
@@ -85,12 +86,12 @@ const modelos = [
     }),
     new ModeloCubierta({
         id: 6,
-        nombre: "TR666",
+        nombre: "TR668",
         marca: "TRIANGLE",
         img: "https://example.com/tr666.jpg",
         indiceCarga: 152,
         tipo: "lineal",
-        precio: 422000,
+        precio: 433000,
         medidas: "295/80R22,5",
     }),
     new ModeloCubierta({
@@ -106,17 +107,8 @@ const modelos = [
 
 
 
-    /* *295/80R22,5 Tracción*
-    
-    HANKOOK 152/148M DH31 $651.000
-    
-    AUSTONE 152/149M ADM207 $497.480
-    
-    TRIANGE TRD06 $473.000 (6u DISPO)
-    
-    CORVEN/CHAOYANG AD153W $473.000
-    
-     */
+
+
     new ModeloCubierta({
         id: 8,
         nombre: "DH31",
@@ -161,21 +153,9 @@ const modelos = [
         medidas: "295/80R22,5",
     }),
 
-    /* 
-    *275/80R22,5 Lineales*
-    
-    KUMHO KCA03 $619.000
-    
-    HANKOOK 149/146L AH31 $499.999
-    
-    AUSTONE 149/146M AT115 $382.400
-    
-    TRIANGLE TR666 $374.900 *PROMO*
-    
-    ZETUM ZSR05 $412.000
-    
-    CORVEN/CHAOYANG 149/146M CR976AW $398.900
-    */
+
+
+
 
     new ModeloCubierta({
         id: 12,
@@ -184,7 +164,8 @@ const modelos = [
         img: "https://example.com/kca03.jpg",
         indiceCarga: 149,
         tipo: "lineal",
-        precio: 619000,
+        precio: 600100,
+        promo: true,
         medidas: "275/80R22,5",
     }),
 
@@ -217,7 +198,7 @@ const modelos = [
         img: "https://example.com/tr666.jpg",
         indiceCarga: 149,
         tipo: "lineal",
-        precio: 374900,
+        precio: 385000,
         medidas: "275/80R22,5",
     }),
 
@@ -228,7 +209,8 @@ const modelos = [
         img: "https://example.com/zsr05.jpg",
         indiceCarga: 149,
         tipo: "lineal",
-        precio: 412000,
+        precio: 402000,
+        promo: true,
         medidas: "275/80R22,5",
     }),
 
@@ -243,15 +225,9 @@ const modelos = [
         medidas: "275/80R22,5",
     }),
 
-    /* 
-    
-*275/80R22,5 Tracción*
 
-CORVEN/CHAOYANG 149/146L AD153W $421,500
 
-ZETUM  ZDR03 $406.000 *PROMO*
 
-    */
 
     new ModeloCubierta({
         id: 18,
@@ -271,24 +247,13 @@ ZETUM  ZDR03 $406.000 *PROMO*
         img: "https://example.com/zdr03.jpg",
         indiceCarga: 149,
         tipo: "tracción",
-        precio: 406000,
+        precio: 417000,
         medidas: "275/80R22,5",
     }),
 
-    /* 
-    *215/75R17,5 Lineales*
 
-HANKOOK 215/75R17,5 TH22 135/133 $272.800 
 
-CORVEN/CHAO YANG 135/133J CR976A $206.000 *PROMO*
 
-*215/75R17,5 Tracción*
-
-KUMHO KDR01 $210.000 *PROMO*
-
-TRIANGLE TR689A $220.000 
-
-    */
 
     new ModeloCubierta({
         id: 20,
@@ -319,7 +284,7 @@ TRIANGLE TR689A $220.000
         img: "https://example.com/kdr01.jpg",
         indiceCarga: 135,
         tipo: "tracción",
-        precio: 210000,
+        precio: 218000,
         medidas: "215/75R17,5",
     }),
 
@@ -330,7 +295,7 @@ TRIANGLE TR689A $220.000
         img: "https://example.com/tr689a.jpg",
         indiceCarga: 135,
         tipo: "tracción",
-        precio: 220000,
+        precio: 226000,
         medidas: "215/75R17,5",
     }),
 ];
