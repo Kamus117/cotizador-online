@@ -1,10 +1,29 @@
 import { listaCompleta } from "./data/modelos"
 import Lista from "./components/lista/Lista"
 import { useEffect, useState } from "react";
+import BarraPedido from "./components/barraPedido/BarraPedido";
+import Modal from "./components/modal/Modal";
+import DetalleCardModal from "./components/detalleCardModal/DetalleCardModal";
+import { usePedido } from "./context/PedidoContext";
 
 function App() {
   const [markUp, setMarkUp] = useState(0);
   const [medidas, setMedidas] = useState([]);
+  const { modalDetalleAbierto, setModalDetalleAbierto, pedido, actualizarCantidad, modalDetalleId, setModalDetalleId } = usePedido();
+
+  const [dataDetalle, setDataDetalle] = useState(null);
+
+  useEffect(() => {
+    if (modalDetalleId) {
+      const encontrado = listaCompleta.flatMap(m => m.modelos).find(mod => mod.id === modalDetalleId);
+      setDataDetalle(encontrado || null);
+    } else {
+      setDataDetalle(null);
+    }
+  }, [modalDetalleId]);
+  
+
+    console.log(dataDetalle);
 
   useEffect(() => {
     const params = new URLSearchParams(window.location.search);
@@ -21,24 +40,22 @@ function App() {
     }
   }, []);
 
-  console.log(medidas)
-
   return (
     <>
-      <div class="fondo"></div>
+      <div className="fondo"></div>
       <a className="wsp" href="https://wa.me/541121819431">
         <img
           src="https://img.icons8.com/color/48/000000/whatsapp.png"
           alt="whatsapp"
-          class="whatsapp"
+          className="whatsapp"
         />
       </a>
       <main>
         <div className="container">
-          <div class="text-center">
-            <h1 class="title">Tirenostic</h1>
-            <p class="subtitle">Cotización de Cubiertas {medidas.length > 0 ? `${medidas.join(", ")}` : ""}</p>
-            <p class="subtitle">Precios finales en cinco cheques IVA incluido · 0-30-60-90-120</p>
+          <div className="text-center">
+            <h1 className="title">Tirenostic</h1>
+            <p className="subtitle">Cotización de Cubiertas {medidas.length > 0 ? `${medidas.join(", ")}` : ""}</p>
+            <p className="subtitle">Precios finales en cinco cheques IVA incluido · 0-30-60-90-120</p>
           </div>
 
           {medidas.length > 0 ? (
@@ -48,11 +65,25 @@ function App() {
           ) : (
             <p>No se han especificado medidas</p>
           )}
-          <div class="footer">
+          <div className="footer">
             Tirenostic · Especialistas en neumáticos para camiones.
           </div>
         </div>
       </main>
+
+      {dataDetalle && (
+        <Modal isOpen={true} onClose={() => setModalDetalleId(null)}>
+          <DetalleCardModal
+            data={dataDetalle}
+            onClose={() => setModalDetalleId(null)}
+            cantidadInicial={pedido[dataDetalle.id] || 0}
+            setCantidad={(cant) => actualizarCantidad(dataDetalle.id, cant)}
+          />
+        </Modal>
+      )}
+
+
+      <BarraPedido />
     </>
   );
 }

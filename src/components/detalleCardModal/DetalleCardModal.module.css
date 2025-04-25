@@ -1,0 +1,81 @@
+.contenedor {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.modelo {
+    font-weight: bold;
+    font-size: 1.1rem;
+    text-align: center;
+}
+
+.controlesCantidad {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.boton {
+    background-color: #111827;
+    color: white;
+    border: none;
+    border-radius: 0.7rem;
+    padding: 0.6rem 1rem;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.boton:hover {
+    background-color: #2c384e;
+}
+
+.inputCantidad {
+    width: 4rem;
+    text-align: center;
+    font-size: 1.1rem;
+    padding: 0.4rem 0.6rem;
+    border: 2px solid #ccc;
+    border-radius: 0.7rem;
+    outline: none;
+/*     -moz-appearance: textfield; */
+}
+
+.inputCantidad:focus {
+    border-color: #25d366;
+    box-shadow: 0 0 0 2px rgba(37, 211, 102, 0.3);
+}
+
+/* Quitar flechas en Chrome, Safari, Edge */
+.inputCantidad::-webkit-outer-spin-button,
+.inputCantidad::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+/* Quitar flechas en Firefox ya está cubierto arriba con -moz-appearance */
+
+.botonAgregar {
+    background-color: #25d366;
+    color: white;
+    font-weight: bold;
+    border: none;
+    border-radius: 0.9rem;
+    padding: 0.9rem 1.4rem;
+    font-size: 1.1rem;
+    cursor: pointer;
+    width: 100%;
+    transition: background-color 0.3s ease;
+}
+
+.botonAgregar:hover {
+    background-color: #1ebc57;
+}
+
+.acciones{
+    display: flex;  
+    flex-direction: column;
+    gap: 1rem;
+}

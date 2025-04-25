@@ -8,7 +8,7 @@ const Lista = ({ arr }) => {
     arr = arr[0].modelos
     return (
         <section className={style.listaContainer}>
-            <h2 class="section-title">⚡ Lineales {medida}</h2>
+            <h2 className="section-title">⚡ Lineales {medida}</h2>
             <div className={style.division} >
                 {/* Lineal */}
                 {arr.some(item => item.tipo === 'lineal') && (
@@ -16,7 +16,7 @@ const Lista = ({ arr }) => {
                 )}
             </div>
 
-            <h2 class="section-title">🚚 Tracción {medida}</h2>
+            <h2 className="section-title">🚚 Tracción {medida}</h2>
             <div className={style.division}>
                 {/* Tracción */}
                 {arr.some(item => item.tipo === 'tracción') && (

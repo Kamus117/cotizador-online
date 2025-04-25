@@ -1,15 +1,25 @@
-import React from 'react'
-import style from './Modal.module.css'
+// src/components/modal/Modal.jsx
+import React from 'react';
+import styles from './Modal.module.css';
+import { IoIosCloseCircleOutline } from "react-icons/io";
 
-const Modal = ({model}) => {
+const Modal = ({ children, isOpen, onClose }) => {
+    if (!isOpen) return null;
+
     return (
-        <div  className={style.modal} >
-            <h2>{model.marca} {model.nombre}</h2>
-            <div className={style.imagen}>
-                <img src={model.imagen} alt={model.marca} />
-        </div>
-        </div>
-    )
-}
+        <div className={styles.overlay} onClick={onClose}>
+            <div className={styles.modal} onClick={e => e.stopPropagation()}>
+{/*                 <button className={styles.closeBtn} onClick={onClose}>
+                    <IoIosCloseCircleOutline />
+                </button> */}
+                {children}
 
-export default Modal
+                <div className={styles.botones}>
+                    <button onClick={onClose} className='btnVolver'>Volver</button>
+                </div>
+            </div>
+        </div>
+    );
+};
+
+export default Modal;
