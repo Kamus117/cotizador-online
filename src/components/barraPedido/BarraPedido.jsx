@@ -65,7 +65,7 @@ const BarraPedido = () => {
                         {modelosElegidos.map(item => (
                             <li key={item.id}>
                                 <div>
-                                    {item.marca} {item.nombre} ({item.medidas}) <b>x {item.cantidad}</b> 
+                                    {item.marca} {item.nombre} ( {(item.medidas).slice(0, 3)} ) <b>x {item.cantidad}</b> 
                                 </div>
 
                                 <div className={styles.contenedorBotones}>
