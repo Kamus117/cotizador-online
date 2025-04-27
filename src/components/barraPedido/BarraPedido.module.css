@@ -1,3 +1,32 @@
+@keyframes shakePause {
+
+    0%,
+    10% {
+        transform: translateX(0);
+    }
+
+    15%,
+    25%,
+    35%,
+    45% {
+        transform: translateX(-10px);
+    }
+
+    20%,
+    30%,
+    40%,
+    50% {
+        transform: translateX(10px);
+    }
+
+    55%,
+    100% {
+        transform: translateX(0);
+    }
+}
+
+
+
 .barra {
     position: fixed;
     bottom: 0;
@@ -14,29 +43,80 @@
     box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.2);
 }
 
+.barra p {
+    animation: shakePause 4s infinite;
+}
+
 .modalContent {
     display: flex;
     flex-direction: column;
-    gap: 2rem;
+    gap: 1rem;
 }
 
-.modalContent ul {
+.ulContainer {
     list-style: none;
     padding: 0;
-    max-height: 400px;
+    max-height: 220px;
     overflow-y: auto;
 }
 
-.modalContent li {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    border-bottom: 1px solid #ddd;
-    padding: 0.87rem 0;
+.ulContainer::-webkit-scrollbar {
+    width: 3px;
 }
 
-.modalContent li:last-child{
+.ulContainer::-webkit-scrollbar-thumb {
+    background-color: #1fac52;
+    border-radius: 5px;
+}
+
+.ulContainer::-webkit-scrollbar-track {
+    background-color: #f1f1f1;
+}
+
+
+
+.modalContent li {
+    display: flex;
+    flex-flow: column;
+    border-bottom: 1px solid #ddd;
+    padding: 0.50rem 0;
+}
+
+.modalContent li:last-child {
     border-bottom: none;
+}
+
+.contenedorLi {
+    display: flex;
+
+}
+
+.contenedorItem {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    flex: 1;
+    justify-content: space-between;
+    padding-right: 0.5rem;
+}
+
+.contenedorItem b {
+    flex-shrink: 0;
+}
+
+.itemInfo {
+    display: flex;
+    flex-direction: column;
+    gap: 0.1rem;
+}
+
+.itemModelo {
+    font-size: 1rem;
+}
+
+.itemMedidas {
+    font-size: 0.9rem;
+    font-style: italic;
 }
 
 .total {
@@ -96,7 +176,7 @@
 .contenedorBotones {
     display: flex;
     align-items: center;
-    gap: 20px;
+    gap: 5px;
 }
 
 .contenedorBotones button {
@@ -119,7 +199,7 @@
     cursor: pointer;
     display: inline-flex;
     font-family: BlinkMacSystemFont, -apple-system, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
-    font-size: 1rem;
+    font-size: .9rem;
     height: 2.5em;
     justify-content: center;
     line-height: 1.5;
@@ -152,4 +232,8 @@
 }
 
 
-
+@media screen and (max-width: 600px) {
+    .itemModelo {
+        font-size: 0.9rem;
+    }
+}
