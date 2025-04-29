@@ -57,6 +57,7 @@
     list-style: none;
     padding: 0;
     max-height: 220px;
+    min-width: 300px;
     overflow-y: auto;
 }
 
@@ -235,5 +236,9 @@
 @media screen and (max-width: 600px) {
     .itemModelo {
         font-size: 0.9rem;
+    }
+
+    .ulContainer{
+        width: 300px;
     }
 }
