@@ -242,3 +242,9 @@
         width: 300px;
     }
 }
+
+@media screen and (min-width: 700px) {
+    .ulContainer{
+        width: 420px;
+    }
+}

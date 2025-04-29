@@ -286,6 +286,6 @@ const modelos = [
 const modelos295 = modelos.filter(modelo => modelo.medidas === "295/80R22,5");
 const modelos275 = modelos.filter(modelo => modelo.medidas === "275/80R22,5");
 const modelos215 = modelos.filter(modelo => modelo.medidas === "215/75R17,5");
-const listaCompleta = [{medida: '295', modelos: modelos295}, {medida: '275', modelos: modelos275}, {medida: '215', modelos: modelos215}];
+const listaCompleta = [{medida: '295/80R22,5', modelos: modelos295}, {medida: '275/80R22,5', modelos: modelos275}, {medida: '215/75R17,5', modelos: modelos215}];
 
 export { modelos, listaCompleta, ModeloCubierta };
