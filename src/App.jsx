@@ -53,7 +53,7 @@ function App() {
       <main>
         <div className="container">
           <div className="text-center">
-            <h1 className="title">Tirenostic</h1>
+            <h1 className="title">Cotizador Online</h1>
             {/*             <p className="subtitle">Cotización de Cubiertas {medidas.length > 0 ? `${medidas.join(", ")}` : ""}</p> */}
             <p className="subtitle">¡Haz click en los productos y arma tu pedido!</p>
             <p className="subtitle">Precios finales en cinco pagos con IVA ya incluido · 0-30-60-90-120</p>
@@ -67,7 +67,7 @@ function App() {
             <p>No se han especificado medidas</p>
           )}
           <div className="footer">
-            Tirenostic · Especialistas en neumáticos para camiones.
+            Cotizador Online · Especialistas en neumáticos para camiones.
           </div>
         </div>
       </main>

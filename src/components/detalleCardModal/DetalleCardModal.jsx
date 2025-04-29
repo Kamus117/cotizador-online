@@ -29,9 +29,17 @@ const DetalleCardModal = ({ isOpen, onClose, data, cantidadInicial, setCantidad 
         <>
             <div className={style.contenedor}>
                 <h2 className={style.modelo}>{data.marca} {data.nombre}</h2>
-                <p>Índice de carga: {data.indiceCarga}</p>
-                <p>Precio total: ${trad.precio(data.precio)}</p>
-                <p>En 5 cheques de: ${trad.precio(data.precio / 5)}</p>
+
+                <div className={style.contenedorInfo}>
+
+                    <div className={style.info}>
+                        <p>Índice de carga: {data.indiceCarga}</p>
+                        <p>Precio total: ${trad.precio(data.precio)}</p>
+                        <p>En 5 cheques de: ${trad.precio(data.precio / 5)}</p>
+                    </div>
+                    
+                    <img className={style.img} src={data.img} alt={data.marca} />
+                </div>
 
                 <div className={style.controlesCantidad}>
                     <button className={style.boton} onClick={() => setCantidadLocal(Math.max(0, cantidad - 1))}>−</button>

@@ -82,7 +82,7 @@ const BarraPedido = () => {
 
                                     </div>
                                 </div>
-                                <span className={styles.itemMedidas}>{item.medidas}</span>
+                                <span className={styles.itemMedidas}>{trad.nombre(item.tipo)}  {item.medidas}</span>
                             </li>
                         ))}
                     </ul>
