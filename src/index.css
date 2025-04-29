@@ -31,7 +31,7 @@
         }
 
         .wsp {
-          display: none;
+          display: flex;
           position: fixed;
           bottom: 70px;
           right: 20px;
