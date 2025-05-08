@@ -36,7 +36,7 @@ const BarraPedido = () => {
                 item =>
                     `• ${item.marca} ${item.nombre} (${item.medidas}) x${item.cantidad} - $${trad.precio(item.precio * item.cantidad)}`
             )
-            .join('\n')}\n\nEn 5 pagos de: $${trad.precio(total / 5)}\nTotal: $${trad.precio(total)}`
+            .join('\n')}\n\nTotal: $${trad.precio(total)}`
     )}`;
 
 
@@ -90,7 +90,7 @@ const BarraPedido = () => {
                     <div>
                         
                     </div>
-                    <p className={styles.total}>En 5 pagos de: ${trad.precio(total / 5)}</p>
+                    {/* <p className={styles.total}>En 5 pagos de: ${trad.precio(total / 5)}</p> */}
                     <p className={styles.total}>Total: ${trad.precio(total)}</p>
 
                     <div className={styles.acciones}>

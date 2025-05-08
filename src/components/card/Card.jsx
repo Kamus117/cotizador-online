@@ -18,7 +18,7 @@ const Card = (data) => {
             </p>
             <p className={style.indice}>Índice: {data.indiceCarga}</p>
             <div className={style.precio}>
-                En 5 cuotas de ${trad.precio(data.precio / 5)}{' '}
+                En {data.cuotas} cuotas de ${trad.precio(data.precioCuota)}{' '}
                 <span className={style.total}>
                     Total: ${trad.precio(data.precio)}
                 </span>

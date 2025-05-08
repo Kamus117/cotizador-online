@@ -17,7 +17,7 @@ const INDICE_CARGA_MAP = {
 };
 
 class ModeloCubierta {
-    constructor({ id, nombre, marca, img, indiceCarga, tipo, precio, oferta = false, disponible = true, medidas }) {
+    constructor({ id, nombre, marca, img, indiceCarga, tipo, precio, oferta = false, disponible = false, medidas, cuotas = 5 }) {
         this.id = id;
         this.nombre = nombre;
         this.marca = marca;
@@ -28,7 +28,7 @@ class ModeloCubierta {
         this.precio = precio;
         this.oferta = oferta;
         this.disponible = disponible;
-        this.cuotas = 5;
+        this.cuotas = cuotas;
         this.precioCuota = Math.round(precio / this.cuotas);
         this.medidas = medidas;
     }
@@ -42,7 +42,6 @@ const modelos = [
         indiceCarga: 152,
         tipo: "lineal",
         precio: 629000,
-        disponible: true,
         oferta: true,
         medidas: "295/80R22,5",
     }),
@@ -52,10 +51,11 @@ const modelos = [
         marca: "HANKOOK",
         indiceCarga: 152,
         tipo: "lineal",
-        precio: 575000,
+        precio: 606692,
+        medidas: "295/80R22,5",
+        cuotas: 7,
         oferta: true,
         disponible: true,
-        medidas: "295/80R22,5",
     }),
     new ModeloCubierta({
         id: 3,
@@ -63,8 +63,9 @@ const modelos = [
         marca: "AUSTONE",
         indiceCarga: 154,
         tipo: "lineal",
-        precio: 495600,
+        precio: 544627,
         medidas: "295/80R22,5",
+        disponible: true,
     }),
     new ModeloCubierta({
         id: 4,
@@ -78,11 +79,12 @@ const modelos = [
     new ModeloCubierta({
         id: 5,
         nombre: "CR976AW",
-        marca: "CORVEN",
+        marca: "CHAOYANG",
         indiceCarga: 152,
         tipo: "lineal",
-        precio: 429000,
+        precio: 418932,
         medidas: "295/80R22,5",
+        disponible: true,
     }),
     new ModeloCubierta({
         id: 6,
@@ -93,18 +95,6 @@ const modelos = [
         precio: 433000,
         medidas: "295/80R22,5",
     }),
-    new ModeloCubierta({
-        id: 7,
-        nombre: "CR976AW",
-        marca: "CHAOYANG",
-        indiceCarga: 150,
-        tipo: "lineal",
-        precio: 418000,
-        medidas: "295/80R22,5",
-    }),
-
-
-
 
 
     new ModeloCubierta({
@@ -123,8 +113,9 @@ const modelos = [
         marca: "AUSTONE",
         indiceCarga: 152,
         tipo: "tracción",
-        precio: 497480,
+        precio: 547127,
         medidas: "295/80R22,5",
+        disponible: true,
     }),
 
     new ModeloCubierta({
@@ -140,13 +131,13 @@ const modelos = [
     new ModeloCubierta({
         id: 11,
         nombre: "AD153W",
-        marca: "CORVEN",
+        marca: "CHAOYANG",
         indiceCarga: 152,
         tipo: "tracción",
-        precio: 473000,
+        precio: 473647,
         medidas: "295/80R22,5",
+        disponible: true,
     }),
-
 
 
 
@@ -168,8 +159,9 @@ const modelos = [
         marca: "HANKOOK",
         indiceCarga: 149,
         tipo: "lineal",
-        precio: 499999,
+        precio: 586672,
         medidas: "275/80R22,5",
+        disponible: true,
     }),
 
     new ModeloCubierta({
@@ -178,7 +170,8 @@ const modelos = [
         marca: "AUSTONE",
         indiceCarga: 149,
         tipo: "lineal",
-        precio: 382400,
+        precio: 420290,
+        disponible: true,
         medidas: "275/80R22,5",
     }),
 
@@ -188,8 +181,11 @@ const modelos = [
         marca: "TRIANGLE",
         indiceCarga: 149,
         tipo: "lineal",
-        precio: 385000,
+        precio: 384707,
         medidas: "275/80R22,5",
+        oferta: true,
+        cuotas: 7,
+        disponible: true,
     }),
 
     new ModeloCubierta({
@@ -198,9 +194,11 @@ const modelos = [
         marca: "ZETUM",
         indiceCarga: 149,
         tipo: "lineal",
-        precio: 402000,
-        promo: true,
+        precio: 368750,
+        oferta: true,
         medidas: "275/80R22,5",
+        cuotas: 7,
+        disponible: true,
     }),
 
     new ModeloCubierta({
@@ -209,7 +207,7 @@ const modelos = [
         marca: "CORVEN/CHAOYANG",
         indiceCarga: 149,
         tipo: "lineal",
-        precio: 398900,
+        precio: 398952,
         medidas: "275/80R22,5",
     }),
 
@@ -223,8 +221,9 @@ const modelos = [
         marca: "CORVEN/CHAOYANG",
         indiceCarga: 149,
         tipo: "tracción",
-        precio: 421500,
+        precio: 421541,
         medidas: "275/80R22,5",
+        disponible: true,
     }),
 
     new ModeloCubierta({
@@ -233,8 +232,11 @@ const modelos = [
         marca: "ZETUM",
         indiceCarga: 149,
         tipo: "tracción",
-        precio: 417000,
+        precio: 416922,
         medidas: "275/80R22,5",
+        oferta: true,
+        cuotas: 7,
+        disponible: true,
     }),
 
 
@@ -280,12 +282,47 @@ const modelos = [
         precio: 226000,
         medidas: "215/75R17,5",
     }),
+
+    new ModeloCubierta({
+        id: 24,
+        nombre: "KTA303",
+        marca: "LINGLONG",
+        indiceCarga: 152,
+        tipo: "lineal",
+        precio: 493965,
+        medidas: "295/80R22,5",
+        oferta: true,
+        cuotas: 7,
+        disponible: true,
+    }),
+
+    new ModeloCubierta({
+        id: 25,
+        nombre: "AFH123",
+        marca: "AUSTONE",
+        indiceCarga: 152,
+        tipo: "lineal",
+        precio: 507316,
+        medidas: "295/80R22,5",
+        disponible: true,
+    }),
+
+    new ModeloCubierta({
+        id: 26,
+        nombre: "AT116A",
+        marca: "AUSTONE",
+        indiceCarga: 152,
+        tipo: "lineal",
+        precio: 472212,
+        medidas: "295/80R22,5",
+        disponible: true,
+    }),
 ];
 
 
-const modelos295 = modelos.filter(modelo => modelo.medidas === "295/80R22,5");
-const modelos275 = modelos.filter(modelo => modelo.medidas === "275/80R22,5");
-const modelos215 = modelos.filter(modelo => modelo.medidas === "215/75R17,5");
+const modelos295 = modelos.filter(modelo => modelo.medidas === "295/80R22,5" && modelo.disponible);
+const modelos275 = modelos.filter(modelo => modelo.medidas === "275/80R22,5" && modelo.disponible);
+const modelos215 = modelos.filter(modelo => modelo.medidas === "215/75R17,5" && modelo.disponible);
 const listaCompleta = [{medida: '295/80R22,5', modelos: modelos295}, {medida: '275/80R22,5', modelos: modelos275}, {medida: '215/75R17,5', modelos: modelos215}];
 
 export { modelos, listaCompleta, ModeloCubierta };

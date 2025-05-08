@@ -35,7 +35,7 @@ const DetalleCardModal = ({ isOpen, onClose, data, cantidadInicial, setCantidad 
                     <div className={style.info}>
                         <p>Índice de carga: {data.indiceCarga}</p>
                         <p>Precio total: ${trad.precio(data.precio)}</p>
-                        <p>En 5 cheques de: ${trad.precio(data.precio / 5)}</p>
+                        <p>En {data.cuotas} cheques de: ${trad.precio(data.precioCuota)}</p>
                     </div>
                     
                     <img className={style.img} src={data.img} alt={data.marca} />
